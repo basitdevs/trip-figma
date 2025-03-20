@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+.font-firtree {
+  font-family: "Figtree", sans-serif !important;
+}
+.font-urbanist {
+  font-family: "Urbanist", sans-serif !important;
+}
+
+.ripple {
+  position: absolute;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid white;
+  border-radius: 100%;
+  animation: ripple 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.ripple-1 {
+  animation-delay: 0s;
+}
+
+.ripple-2 {
+  animation-delay: 0.4s;
+}
+
+.ripple-3 {
+  animation-delay: 0.8s;
+}
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.selectedStart {
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border: 5px solid !important;
+  border-color: #d0a88b !important;
+}
