@@ -1,5 +1,5 @@
 "use client";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const StayItems1: string[] = [
@@ -20,13 +20,13 @@ const StayItems3: string[] = [
 ];
 const ThingsToKnow: React.FC = () => {
   return (
-    <div className="w-full flex flex-col justify-start items-start gap-4 px-3 md:px-12 lg:px-16 pb-20">
+    <div className="w-full overflow-hidden flex flex-col justify-start items-start gap-4 px-3 md:px-12 lg:px-16 pb-20">
       <motion.h3
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: easeInOut }}
-        className="text-[#232323] text-[22px] md:text-[26] lg:text-[30px] font-medium .font-urbanist "
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="text-[#232323] text-[22px] md:text-[26] lg:text-[30px] font-medium font-urbanist "
       >
         Things to Know
       </motion.h3>
@@ -36,8 +36,8 @@ const ThingsToKnow: React.FC = () => {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: easeInOut }}
-            className="text-[20px] font-semibold .font-urbanist text-[#232323] text-left"
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="text-[20px] font-semibold font-urbanist text-[#232323] text-left"
           >
             Where You’ll Stay
           </motion.h4>
@@ -49,9 +49,8 @@ const ThingsToKnow: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
-                    duration: 0.6,
-                    delay: 0.1 * i,
-                    ease: easeInOut,
+                    duration: 0.35,
+                    ease: "easeInOut",
                   }}
                   key={i}
                   className="flex justify-start items-center gap-2"
@@ -83,8 +82,8 @@ const ThingsToKnow: React.FC = () => {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: easeInOut }}
-            className="text-[20px] font-semibold .font-urbanist text-[#232323] text-left"
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="text-[20px] font-semibold font-urbanist text-[#232323] text-left"
           >
             Where You’ll Stay
           </motion.h4>
@@ -96,9 +95,8 @@ const ThingsToKnow: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
-                    duration: 0.6,
-                    delay: 0.1 * i,
-                    ease: easeInOut,
+                    duration: 0.35,
+                    ease: "easeInOut",
                   }}
                   key={i}
                   className="flex justify-start items-center gap-2"
@@ -130,8 +128,8 @@ const ThingsToKnow: React.FC = () => {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: easeInOut }}
-            className="text-[20px] font-semibold .font-urbanist text-[#232323] text-left"
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="text-[20px] font-semibold font-urbanist text-[#232323] text-left"
           >
             Where You’ll Stay
           </motion.h4>
@@ -143,9 +141,8 @@ const ThingsToKnow: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
-                    duration: 0.6,
-                    delay: 0.1 * i,
-                    ease: easeInOut,
+                    duration: 0.35,
+                    ease: "easeInOut",
                   }}
                   key={i}
                   className="flex justify-start items-center gap-2"

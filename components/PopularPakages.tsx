@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, easeIn, easeInOut, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 interface Packages {
   title: string;
   duration: string;
@@ -19,13 +19,13 @@ const PopularPakages: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: easeInOut }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
           className="w-full text-center flex justify-center gap-3 items-center leading-tight"
         >
-          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#997658] .font-urbanist ">
+          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#997658] font-urbanist ">
             Popular{" "}
           </h1>
-          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#000] .font-urbanist">
+          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#000] font-urbanist">
             Packages
           </h1>
         </motion.div>
@@ -33,7 +33,7 @@ const PopularPakages: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1, ease: easeInOut }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
           className="text-[16px] lg:text-[18px] text-[#3A3A3A] text-center"
         >
           Find the perfect getaway with our exclusive travel deals!
@@ -46,11 +46,11 @@ const PopularPakages: React.FC = () => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 * i, ease: easeInOut }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
               key={i}
               className="w-full overflow-hidden rounded-2xl p-4 flex justify-end items-start bg-[url('/packageImg_1.jpeg')] bg-cover bg-center bg-no-repeat h-[50vh] lg:h-[60vh] flex-col cursor-pointer hover:scale-[1.03] transition-all duration-300"
             >
-              <h5 className="text-[#ffffff] text-[22px] .font-urbanist ">
+              <h5 className="text-[#ffffff] text-[22px] font-urbanist ">
                 {item.title}
               </h5>
               <span className="text-[#ffffff] text-[16px] .font-firtree">

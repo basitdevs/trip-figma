@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col lg:items-start lg:justify-start justify-center items-center gap-6">
-            <h3 className="text-[30px] text-[#ffffff] font-semibold .font-urbanist">
+            <h3 className="text-[30px] text-[#ffffff] font-semibold font-urbanist">
               Quick Links
             </h3>
             <Link
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
             </Link>
           </div>
           <div className=" lg:w-[32%] flex flex-col items-center justify-center lg:items-start lg:justift-start gap-6">
-            <h1 className="text-[30px] text-[#ffffff] font-semibold .font-urbanist">
+            <h1 className="text-[30px] text-[#ffffff] font-semibold font-urbanist">
               Contact Info
             </h1>
             <div className="flex justify-start items-start ">
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className=" flex  flex-col lg:justify-strat lg:items-start justify-center items-center gap-4">
-            <h3 className="text-[30px] text-[#ffffff] font-semibold .font-urbanist">
+            <h3 className="text-[30px] text-[#ffffff] font-semibold font-urbanist">
               Follow Us
             </h3>
             <div className="flex gap-4 lg:gap-2">

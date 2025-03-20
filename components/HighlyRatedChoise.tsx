@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Views from "./Views";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
+
 interface RatedItems {
   title: string;
   icon: string;
@@ -19,19 +20,19 @@ const RatedItems: RatedItems[] = [
 ];
 const HighlyRatedChoise: React.FC = () => {
   return (
-    <div className="w-full px-3 md:px-12 xl:px-16 flex justify-center items-center flex-col gap-4">
+    <div className="w-full overflow-hidden px-3 md:px-12 xl:px-16 flex justify-center items-center flex-col gap-4">
       <motion.hr
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: easeInOut }}
+        transition={{ duration: 0.356, ease: "easeInOut" }}
         className="w-full text-[#000000] mt-7"
       />
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: easeInOut }}
+        transition={{ duration: 0.356, ease: "easeInOut" }}
         className="relative"
       >
         <Image
@@ -42,7 +43,7 @@ const HighlyRatedChoise: React.FC = () => {
           className="w-[270px] h-[120px] relative "
           priority
         />
-        <span className="text-[60px] font-semibold absolute .font-urbanist top-[10px] left-[90px]">
+        <span className="text-[60px] font-semibold absolute font-urbanist top-[10px] left-[90px]">
           5.0
         </span>
       </motion.div>
@@ -50,8 +51,8 @@ const HighlyRatedChoise: React.FC = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.1, ease: easeInOut }}
-        className="text-[22px] md:text-[30px] font-semibold .font-urbanist text-center"
+        transition={{ duration: 0.356, ease: "easeInOut" }}
+        className="text-[22px] md:text-[30px] font-semibold font-urbanist text-center"
       >
         Highly Rated Choice
       </motion.h3>
@@ -59,7 +60,7 @@ const HighlyRatedChoise: React.FC = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2, ease: easeInOut }}
+        transition={{ duration: 0.356, ease: "easeInOut" }}
         className="text-[14px] font-normal .font-firtree max-w-[500px] text-center text-[#3A3A3A]"
       >
         This property is among the top-rated stays, recognized for its
@@ -70,7 +71,7 @@ const HighlyRatedChoise: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: easeInOut }}
+          transition={{ duration: 0.34, ease: "easeInOut" }}
           className="w-full  p-2  px-3 rounded-xl bg-[#ffffff] shadow-xl shadow-gray-200 hover:scale-[1.03] transition-all duration-300 cursor-pointer"
         >
           <h5 className="text-[18px] font-semibold text-left">
@@ -92,7 +93,7 @@ const HighlyRatedChoise: React.FC = () => {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 * i + 1, ease: easeInOut }}
+            transition={{ duration: 0.356, ease: "easeInOut" }}
             key={i}
             className="flex flex-col w-full justify-center items-start gap-3 p-2 py-5 rounded-xl bg-[#ffffff] shadow-xl shadow-gray-200  hover:scale-[1.03] transition-all duration-300 cursor-pointer"
           >
@@ -104,10 +105,10 @@ const HighlyRatedChoise: React.FC = () => {
               priority
               className="w-[40px]"
             />
-            <span className="text-[18px] font-medium .font-urbanist text-[#3A3A3A]">
+            <span className="text-[18px] font-medium font-urbanist text-[#3A3A3A]">
               {item.title}
             </span>
-            <span className="text-[20px] .font-urbanist font-semibold">
+            <span className="text-[20px] font-urbanist font-semibold">
               {item.value}
             </span>
           </motion.div>

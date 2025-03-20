@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
           whileInView={{opacity:1,y:0}}
           viewport={{once:true}}
           transition={{duration:0.7, ease:easeInOut}}
-          className="text-[#ffffff] text-[40px] md:text-[46px] lg:text-[50px] xl:text-[60px] font-semibold .font-urbanist text-center leading-tight">
+          className="text-[#ffffff] text-[40px] md:text-[46px] lg:text-[50px] xl:text-[60px] font-semibold font-urbanist text-center leading-tight">
             Find Your Perfect Fishing Adventure
           </motion.h1>
           <motion.p

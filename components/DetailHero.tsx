@@ -10,14 +10,14 @@ const otherImgs: string[] = [
 
 const DetailHero: React.FC = () => {
   return (
-    <div className="w-full px-3 md:px-12 xl:px-16 py-6">
+    <div className="w-full px-3 md:px-12 xl:px-16 py-6 overflow-hidden">
       <div className="w-full flex flex-col sm:flex-row justify-between items-start gap-4">
         {/* Left Section */}
         <motion.div
-          initial={{ opacity: 0, x: -120 }}
+          initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6,delay:0.1, ease: easeInOut }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
           className="w-full  sm:basis-[60%] rounded-4xl group overflow-hidden cursor-pointer"
         >
           <Image
@@ -32,10 +32,10 @@ const DetailHero: React.FC = () => {
 
         {/* Right Section */}
         <motion.div
-          initial={{ opacity: 0, x: 120 }}
+          initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6,delay:0.1, ease: easeInOut }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
           className="w-full sm:basis-[60%] grid grid-cols-2 gap-4  self-start"
         >
           {otherImgs.map((item: string, i: number) => (

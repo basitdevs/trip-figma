@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, easeInOut, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 interface Features {
   title: string;
@@ -31,14 +31,14 @@ const WhyChooseUs: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: easeInOut }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
           className="w-full text-center flex justify-center items-center gap-4 leading-tight"
         >
-          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#000] .font-urbanist ">
+          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#000] font-urbanist ">
             Why Book {"  "}
           </h1>
 
-          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#997658] .font-urbanist">
+          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#997658] font-urbanist">
             With Us?
           </h1>
         </motion.div>
@@ -46,7 +46,7 @@ const WhyChooseUs: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1, ease: easeInOut }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeInOut" }}
           className="text-[16px] lg:text-[18px] text-[#3A3A3A] text-center"
         >
           Enjoy exclusive benefits when choosing our travel services!
@@ -59,7 +59,7 @@ const WhyChooseUs: React.FC = () => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 * i, ease: easeInOut }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
               key={i}
               className=" flex flex-col justify-center items-center gap-2 rounded-2xl bg-[#ffffff] text-center cursor-pointer shadow-lg shadow-gray-200 py-4 lg:px-3 xl:px-2 hover:scale-[1.03] transition-all duration-300"
             >
@@ -72,7 +72,7 @@ const WhyChooseUs: React.FC = () => {
                   className="w-[35px] h-[35px] filter brightness-0 invert"
                 />
               </div>
-              <h4 className="text-[25px] text-[#000] .font-urbanist">
+              <h4 className="text-[25px] text-[#000] font-urbanist">
                 {item.title}
               </h4>
               <p className="text-[18px] text-[#3A3A3A] .font-firtree">

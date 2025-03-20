@@ -1,16 +1,15 @@
 "use client";
-import { easeInOut, motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Location: React.FC = () => {
   return (
-    <div className="w-full flex flex-col justify-start items-start gap-4 px-3 md:px-12 lg:px-16">
+    <div className="w-full flex flex-col overflow-hidden justify-start items-start gap-4 px-3 md:px-12 lg:px-16">
       <motion.h3
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: easeInOut }}
-        className="text-[#232323] text-[30px] font-semibold text-left .font-urbanist"
+        transition={{ duration: 0.37, ease: "easeInOut" }}
+        className="text-[#232323] text-[30px] font-semibold text-left font-urbanist"
       >
         Welcome to Your Stay
       </motion.h3>
@@ -18,7 +17,7 @@ const Location: React.FC = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.1, ease: easeInOut }}
+        transition={{ duration: 0.37, ease: "easeInOut" }}
         className="w-full max-h-[50vh] rounded-2xl overflow-hidden"
       >
         <iframe
@@ -34,8 +33,8 @@ const Location: React.FC = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2, ease: easeInOut }}
-        className="text-[#232323] text-[25px] font-medium .font-urbanist"
+        transition={{ duration: 0.37, ease: "easeInOut" }}
+        className="text-[#232323] text-[25px] font-medium font-urbanist"
       >
         Sunridge Heights, Emerald Valley
       </motion.h4>
@@ -43,7 +42,7 @@ const Location: React.FC = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.3, ease: easeInOut }}
+        transition={{ duration: 0.37, ease: "easeInOut" }}
         className="text-[18px] font-normal .font-firtree text-left -mt-3"
       >
         We are situated in a secure and peaceful neighborhood, offering privacy
@@ -57,7 +56,7 @@ const Location: React.FC = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: easeInOut }}
+        transition={{ duration: 0.37, ease: "easeInOut" }}
         className="text-[#997658] text-[16px] font-normal .font-firtree text-center p-3 px-5 rounded-4xl border-[1px] border-[#997658] hover:text-[#ffffff] hover:bg-[#997658] transition-all duration-300 cursor-pointer "
       >
         View More
@@ -66,7 +65,7 @@ const Location: React.FC = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: easeInOut }}
+        transition={{ duration: 0.37, ease: "easeInOut" }}
         className="w-full text-[#000] my-3"
       />
     </div>

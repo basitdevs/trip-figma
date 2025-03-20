@@ -13,9 +13,7 @@ const page:React.FC=()=> {
     <div className="w-full">
       <DetailHero/>
       <DetailSection/>
-      <WhyChooseThisPackage/>
-      <ExperienceOffer/>
-      <ClearDates/>
+    
       <HighlyRatedChoise/>
       <Location/>
       <ThingsToKnow/>

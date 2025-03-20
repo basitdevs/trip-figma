@@ -1,5 +1,5 @@
 "use client";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface Viewer {
@@ -46,7 +46,7 @@ const Views: React.FC = () => {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 * i, ease: easeInOut }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             key={i}
             className="w-full p-5 cursor-pointer rounded-xl flex flex-col gap-2 bg-[#ffffff] shadow-lg shadow-gray-200 hover:scale-[1.03] transition-all duration-300 "
           >
@@ -88,19 +88,21 @@ const Views: React.FC = () => {
         ))}
       </div>
       <motion.button
-      initial={{opacity:0,y:100}}
-      whileInView={{opacity:1,y:0}}
-      viewport={{once:true}}
-      transition={{duration:0.6, ease:easeInOut}}
-      className="text-[#997658] text-[18px] font-normal .font-firtree text-center p-3 px-7 rounded-4xl border-[1px] border-[#997658] hover:text-[#ffffff] hover:bg-[#997658] transition-all duration-300 cursor-pointer mt-5 mb-[4px]">
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="text-[#997658] text-[18px] font-normal .font-firtree text-center p-3 px-7 rounded-4xl border-[1px] border-[#997658] hover:text-[#ffffff] hover:bg-[#997658] transition-all duration-300 cursor-pointer mt-5 mb-[4px]"
+      >
         Show All Reviews
       </motion.button>
       <motion.hr
-      initial={{opacity:0,y:100}}
-      whileInView={{opacity:1,y:0}}
-      viewport={{once:true}}
-      transition={{duration:0.6,delay:0.1, ease:easeInOut}}
-      className="text-[#000] w-full" />
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="text-[#000] w-full"
+      />
     </div>
   );
 };

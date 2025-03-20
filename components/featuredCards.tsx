@@ -33,7 +33,7 @@ const FeaturedCards: React.FC = () => {
               >
                 <div
                   key={i}
-                  className="w-full max-w-[190px] p-[8px] py-2  flex justify-start items-center gap-2 rounded-4xl border-[1px] border-[#ffffff] mt-4 ml-4 bg-[#ffffff] .font-urbanist"
+                  className="w-full max-w-[190px] p-[8px] py-2  flex justify-start items-center gap-2 rounded-4xl border-[1px] border-[#ffffff] mt-4 ml-4 bg-[#ffffff] font-urbanist"
                 >
                   <Image
                     src="/GuestFavorites_icon.png"
@@ -43,14 +43,14 @@ const FeaturedCards: React.FC = () => {
                     className="w-[20px] h-auto"
                     alt="icon"
                   />
-                  <span className="text-[14px] text-[#3A3A3A] .font-urbanist">
+                  <span className="text-[14px] text-[#3A3A3A] font-urbanist">
                     Guest Favorites{" "}
                   </span>
                 </div>{" "}
               </div>
               <div className="flex flex-col justify-start items-start gap-[6px] w-full px-4 py-6 pt-2">
                 <div className=" w-full flex justify-between items-center">
-                  <h3 className="text-[#000000] text-[25px] md:text-[20px] xl:text-[25px] font-semibold .font-urbanist">
+                  <h3 className="text-[#000000] text-[25px] md:text-[20px] xl:text-[25px] font-semibold font-urbanist">
                     Baltic Sea Fishing{" "}
                   </h3>
                   <div className="flex justify-between items-center gap-1 cursor-pointer">
@@ -67,7 +67,7 @@ const FeaturedCards: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <p className="text-[16px] text-left xl:text-[18px] leading-tight .font-urbanist">
+                <p className="text-[16px] text-left xl:text-[18px] leading-tight font-urbanist">
                   Catch cod and mackerel in the open sea with expert guides.{" "}
                 </p>
                 <div className="flex justify-star items-center gap-2 ">
@@ -79,7 +79,7 @@ const FeaturedCards: React.FC = () => {
                     height={106}
                     priority
                   />
-                  <span className="text-[16px] xl:text-[18px] text-[#3A3A3A] .font-urbanist">
+                  <span className="text-[16px] xl:text-[18px] text-[#3A3A3A] font-urbanist">
                     200 km from Berlin{" "}
                   </span>
                 </div>
@@ -92,7 +92,7 @@ const FeaturedCards: React.FC = () => {
                     height={10}
                     priority
                   />
-                  <span className="text-[16px] xl:text-[18px] text-[#3A3A3A] .font-urbanist">
+                  <span className="text-[16px] xl:text-[18px] text-[#3A3A3A] font-urbanist">
                     Apr 10 - 15{" "}
                   </span>
                 </div>
@@ -109,7 +109,7 @@ const FeaturedCards: React.FC = () => {
                   whileInView={{opacity:1,y:0}}
                   viewport={{once:true}}
                   transition={{duration:0.6, ease:easeInOut}}
-                  className="text-[16px] text-[#997658] outline-none border-[1px] border-[#997658] p-3 .font-urbanist rounded-4xl px-7 transition-all duration-300 hover:bg-[#997658] hover:text-[#ffffff] cursor-pointer">
+                  className="text-[16px] text-[#997658] outline-none border-[1px] border-[#997658] p-3 font-urbanist rounded-4xl px-7 transition-all duration-300 hover:bg-[#997658] hover:text-[#ffffff] cursor-pointer">
                     Book Now
                   </motion.button>
                 </div>

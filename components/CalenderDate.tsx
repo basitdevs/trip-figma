@@ -16,13 +16,11 @@ import {
 } from "date-fns";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 
-// Type for the selected range
 type SelectedRange = {
   start: Date | null;
   end: Date | null;
 };
 
-// Type for the calendar component props (if any; currently empty)
 type CalendarProps = {};
 
 const Calendar: React.FC<CalendarProps> = () => {
@@ -32,7 +30,6 @@ const Calendar: React.FC<CalendarProps> = () => {
     end: null,
   });
 
-  // Function to generate all days in the current month, including surrounding weeks
   const daysInMonth = (month: Date): Date[] => {
     const start = startOfMonth(month);
     const end = endOfMonth(month);
@@ -49,34 +46,28 @@ const Calendar: React.FC<CalendarProps> = () => {
     return days;
   };
 
-  // Handle day selection with a maximum range of one month (31 days)
   const handleDayClick = (day: Date): void => {
     if (!selectedRange.start || (selectedRange.start && selectedRange.end)) {
-      // Start a new selection
       setSelectedRange({ start: day, end: null });
     } else {
       let start = selectedRange.start;
       let end = day;
-      // Ensure start is before end
       if (day < start) {
         start = day;
         end = selectedRange.start;
       }
       const diff = differenceInCalendarDays(end, start);
       if (diff > 31) {
-        // Clamp the selection to 31 days maximum
         end = addDays(start, 31);
       }
       setSelectedRange({ start, end });
     }
   };
 
-  // Navigate to the previous month
   const handlePrevMonth = (): void => {
     setCurrentMonth(addMonths(currentMonth, -1));
   };
 
-  // Navigate to the next month
   const handleNextMonth = (): void => {
     setCurrentMonth(addMonths(currentMonth, 1));
   };
@@ -147,7 +138,6 @@ const Calendar: React.FC<CalendarProps> = () => {
       className="w-full flex justify-center p-4 bg-white shadow-md rounded-3xl mb-2 lg:-mb-3 mt-5"
     >
       <div className="w-full grid-cols-1 lg:grid-cols-2 gap-4 grid">
-        {/* First calendar (current month) */}
         <div className="rounded-lg p-2 ">
           <div className="flex items-center justify-between py-2">
             <button
@@ -195,11 +185,6 @@ const Calendar: React.FC<CalendarProps> = () => {
             {daysInMonth(currentMonth).map((day, index) => (
               <div
                 key={index}
-                // className={` ${getDayClasses(
-                //   day,
-                //   currentMonth,
-                //   selectedRange
-                // )}`}
                 style={getDayStyles(day, currentMonth, selectedRange)}
                 onClick={() => handleDayClick(day)}
               >
@@ -209,7 +194,6 @@ const Calendar: React.FC<CalendarProps> = () => {
           </div>
         </div>
 
-        {/* Second calendar (next month) */}
         <div className="rounded-lg p-2 hidden lg:block">
           <div className="flex items-center justify-between py-2">
             <button className="p-2 bg-gray-100 rounded-full hover:bg-white opacity-0" />
@@ -252,11 +236,6 @@ const Calendar: React.FC<CalendarProps> = () => {
               (day, index: number) => (
                 <div
                   key={index}
-                  // className={` ${getDayClasses(
-                  //   day,
-                  //   addMonths(currentMonth, 1),
-                  //   selectedRange
-                  // )}`}
                   style={getDayStyles(
                     day,
                     addMonths(currentMonth, 1),
