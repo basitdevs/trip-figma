@@ -75,13 +75,7 @@ const PackageDetail: React.FC = () => {
           </motion.div>
         ))}
       </div>
-      <motion.hr
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.35, delay: 0.3, ease: "easeInOut" }}
-        className="w-full text-[#000] md:my-2"
-      />
+      <hr className="w-full text-[#000] md:my-2" />
       <div className="w-full flex flex-col items-start justify-center gap-3">
         <motion.h3
           initial={{ opacity: 0, y: 100 }}
@@ -109,10 +103,10 @@ const PackageDetail: React.FC = () => {
           beauty of the open sea.
         </motion.p>
         <motion.button
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.35, ease: "easeInOut" }}
+          transition={{ duration: 0.25, ease: "easeIn" }}
           className="text-[#997658] text-[16px] font-normal .font-firtree text-center p-2 px-5 rounded-4xl border-[1px] border-[#997658] hover:text-[#ffffff] hover:bg-[#997658] transition-all duration-300 cursor-pointer "
         >
           View More

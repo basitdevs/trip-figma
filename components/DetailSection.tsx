@@ -11,7 +11,6 @@ const Stars = Array(5).fill(undefined);
 
 const DetailSection: React.FC = () => {
   return (
-    // Wrapping with a min-h-screen to ensure the page is scrollable
     <div className="min-h-screen px-3 md:px-12 xl:px-16 pt-6">
       <div className="w-full flex flex-col md:flex-row gap-4 md:gap-8 relative">
         <div className="md:basis-[74%]">
@@ -93,7 +92,6 @@ const DetailSection: React.FC = () => {
           <ClearDates />
         </div>
         <div className="md:basis-[36%] w-full">
-          {/* Separate sticky wrapper with only the top offset */}
           <div className="sticky top-10">
             <Booking />
           </div>

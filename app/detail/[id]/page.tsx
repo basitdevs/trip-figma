@@ -13,7 +13,6 @@ const page:React.FC=()=> {
     <div className="w-full">
       <DetailHero/>
       <DetailSection/>
-    
       <HighlyRatedChoise/>
       <Location/>
       <ThingsToKnow/>

@@ -2,14 +2,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-
 const PromotionalItems: string[] = [
   "Premium fishing gear provided",
   "Learn from experienced local fishermen",
   "Enjoy breathtaking coastal scenery and peaceful ocean vibes",
   "Ideal for solo travelers, families, or groups",
 ];
-
 
 const WhyChooseThisPackage: React.FC = () => {
   return (
@@ -27,10 +25,10 @@ const WhyChooseThisPackage: React.FC = () => {
         <div className="w-full flex flex-col justify-start items-start gap-3">
           {PromotionalItems.map((item: string, i: number) => (
             <motion.div
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: 0.1 * 1, ease: "easeInOut" }}
+              transition={{ duration: 0.3, delay: 0.02 * i, ease: "easeInOut" }}
               key={i}
               style={{
                 boxShadow:
@@ -52,13 +50,7 @@ const WhyChooseThisPackage: React.FC = () => {
             </motion.div>
           ))}
         </div>
-        <motion.hr
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.35, ease: "easeInOut" }}
-          className="w-full text-[#000000] my-4"
-        />
+        <hr className="w-full text-[#000000] my-4" />
       </div>
     </div>
   );

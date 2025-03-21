@@ -19,7 +19,7 @@ const PopularPakages: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={{ duration: 0.4, ease: "linear" }}
           className="w-full text-center flex justify-center gap-3 items-center leading-tight"
         >
           <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#997658] font-urbanist ">
@@ -33,7 +33,7 @@ const PopularPakages: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+          transition={{ duration: 0.6, ease: "linear" }}
           className="text-[16px] lg:text-[18px] text-[#3A3A3A] text-center"
         >
           Find the perfect getaway with our exclusive travel deals!
@@ -43,10 +43,10 @@ const PopularPakages: React.FC = () => {
         <AnimatePresence>
           {PackagesItem.map((item: Packages, i: number) => (
             <motion.div
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 0.2, delay:i*0.04, ease: "easeIn" }}
               key={i}
               className="w-full overflow-hidden rounded-2xl p-4 flex justify-end items-start bg-[url('/packageImg_1.jpeg')] bg-cover bg-center bg-no-repeat h-[50vh] lg:h-[60vh] flex-col cursor-pointer hover:scale-[1.03] transition-all duration-300"
             >

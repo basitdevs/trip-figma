@@ -38,7 +38,7 @@ const SearchBarSection: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="w-full absolute -bottom-[130px] md:-bottom-10 left-1/2 transform -translate-x-1/2       "
+      className="w-full absolute -bottom-[130px] sm:-bottom-16 md:-bottom-10 left-1/2 transform -translate-x-1/2       "
     >
       <div className="hidden lg:flex   w-[92%] mx-auto bg-[#ffffff] rounded-2xl  flex-col justify-center items-center shadow-lg shadow-gray-100 z-100 px-8 py-6">
         <div className="w-full flex justify-between items-center gap-4">

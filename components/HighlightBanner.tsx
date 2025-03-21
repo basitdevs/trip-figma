@@ -29,10 +29,10 @@ const HighlightBanner: React.FC = () => {
             and make unforgettable memories!
           </motion.p>
           <motion.button
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="text-[16px] lg:text-[18px] bg-[#ffffff] flex justify-center items-center p-3 px-6 rounded-4xl text-[#836448] .font-firtree hover:scale-[1.02] transition-all duration-300 cursor-pointer"
           >
             View More

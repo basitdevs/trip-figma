@@ -31,7 +31,7 @@ const WhyChooseUs: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 0.3, ease: "linear" }}
           className="w-full text-center flex justify-center items-center gap-4 leading-tight"
         >
           <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#000] font-urbanist ">
@@ -46,7 +46,7 @@ const WhyChooseUs: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeInOut" }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "linear" }}
           className="text-[16px] lg:text-[18px] text-[#3A3A3A] text-center"
         >
           Enjoy exclusive benefits when choosing our travel services!
@@ -59,9 +59,9 @@ const WhyChooseUs: React.FC = () => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+              transition={{ duration: 0.3, delay:i*0.05, ease: "linear" }}
               key={i}
-              className=" flex flex-col justify-center items-center gap-2 rounded-2xl bg-[#ffffff] text-center cursor-pointer shadow-lg shadow-gray-200 py-4 lg:px-3 xl:px-2 hover:scale-[1.03] transition-all duration-300"
+              className=" flex flex-col justify-center items-center gap-2 rounded-2xl bg-[#ffffff] text-center cursor-pointer shadow-lg shadow-gray-200 py-4 px-4 hover:scale-[1.03] transition-all duration-300"
             >
               <div className="rounded-full flex justify-center items-center bg-[#836448] w-[70px] h-[70px] ">
                 <Image
