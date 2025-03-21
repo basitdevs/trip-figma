@@ -16,8 +16,8 @@ const PopularPakages: React.FC = () => {
     <div className="w-full px-4 md:px-12  xl:px-16 flex flex-col justify-center items-center gap-4 my-5">
       <div className="text-center flex justify-center items-center gap-2 flex-col">
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 60 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: "linear" }}
           className="w-full text-center flex justify-center gap-3 items-center leading-tight"
@@ -30,10 +30,10 @@ const PopularPakages: React.FC = () => {
           </h1>
         </motion.div>
         <motion.p
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 60 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "linear" }}
+          transition={{ duration: 0.3, ease: "linear" }}
           className="text-[16px] lg:text-[18px] text-[#3A3A3A] text-center"
         >
           Find the perfect getaway with our exclusive travel deals!
@@ -44,9 +44,9 @@ const PopularPakages: React.FC = () => {
           {PackagesItem.map((item: Packages, i: number) => (
             <motion.div
               initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.2, delay:i*0.04, ease: "easeIn" }}
+              transition={{ duration: 0.3, delay: i * 0.04, ease: "easeIn" }}
               key={i}
               className="w-full overflow-hidden rounded-2xl p-4 flex justify-end items-start bg-[url('/packageImg_1.jpeg')] bg-cover bg-center bg-no-repeat h-[50vh] lg:h-[60vh] flex-col cursor-pointer hover:scale-[1.03] transition-all duration-300"
             >

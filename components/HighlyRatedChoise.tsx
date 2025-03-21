@@ -22,15 +22,15 @@ const HighlyRatedChoise: React.FC = () => {
   return (
     <div className="w-full overflow-hidden px-3 md:px-12 xl:px-16 flex justify-center items-center flex-col gap-4">
       <motion.hr
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ y: 60 }}
+        whileInView={{ y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
         className="w-full text-[#000000] mt-7"
       />
       <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ y: 60 }}
+        whileInView={{ y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
         className="relative"
@@ -48,8 +48,8 @@ const HighlyRatedChoise: React.FC = () => {
         </span>
       </motion.div>
       <motion.h3
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ y: 60 }}
+        whileInView={{ y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
         className="text-[22px] md:text-[30px] font-semibold font-urbanist text-center"
@@ -57,8 +57,8 @@ const HighlyRatedChoise: React.FC = () => {
         Highly Rated Choice
       </motion.h3>
       <motion.p
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ y: 60 }}
+        whileInView={{ y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
         className="text-[14px] font-normal .font-firtree max-w-[500px] text-center text-[#3A3A3A]"
@@ -68,8 +68,8 @@ const HighlyRatedChoise: React.FC = () => {
       </motion.p>
       <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 my-6">
         <motion.ol
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 60 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{
             duration: 0.34,
@@ -94,8 +94,8 @@ const HighlyRatedChoise: React.FC = () => {
         </motion.ol>
         {RatedItems.map((item: RatedItems, i: number) => (
           <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: 60 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.2, delay: 0.05 * i, ease: "easeInOut" }}
             key={i}
