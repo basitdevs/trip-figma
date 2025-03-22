@@ -1,11 +1,13 @@
-"use client";
-import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import FadeUpTitle from "./motion/FadeUpTitle";
+import FadeUp from "./motion/FadeUp";
+
 interface Features {
   title: string;
   icon: string;
   des: string;
 }
+
 const KeyFeatured: Features[] = [
   {
     title: "Flexible Travel Options",
@@ -23,46 +25,33 @@ const KeyFeatured: Features[] = [
     des: "Fast, secure, and simple booking process with instant confirmations.",
   },
 ];
+
 const WhyChooseUs: React.FC = () => {
   return (
     <div className="w-full px-4 md:px-12  xl:px-16 flex flex-col justify-center items-center gap-4 my-14">
       <div className="text-center flex justify-center items-center gap-2 flex-col">
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, ease: "linear" }}
-          className="w-full text-center flex justify-center items-center gap-4 leading-tight"
-        >
-          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#000] font-urbanist ">
-            Why Book {"  "}
-          </h1>
-
-          <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#997658] font-urbanist">
-            With Us?
-          </h1>
-        </motion.div>
-        <motion.p
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "linear" }}
-          className="text-[16px] lg:text-[18px] text-[#3A3A3A] text-center"
-        >
-          Enjoy exclusive benefits when choosing our travel services!
-        </motion.p>
+        <div className="w-full text-center flex justify-center items-center gap-4 leading-tight">
+          <FadeUpTitle>
+            <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#000] font-urbanist ">
+              Why Book {"  "}
+            </h1>
+          </FadeUpTitle>
+          <FadeUpTitle>
+            <h1 className="text-[32px] md:text-[44px] lg:text-[48px] xl:text-[55px] font-bold text-[#997658] font-urbanist">
+              With Us?
+            </h1>
+          </FadeUpTitle>
+        </div>
+        <FadeUp>
+          <p className="text-[16px] lg:text-[18px] text-[#3A3A3A] text-center">
+            Enjoy exclusive benefits when choosing our travel services!
+          </p>
+        </FadeUp>
       </div>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10">
-        <AnimatePresence>
-          {KeyFeatured.map((item: Features, i: number) => (
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay:i*0.05, ease: "linear" }}
-              key={i}
-              className=" flex flex-col justify-center items-center gap-2 rounded-2xl bg-[#ffffff] text-center cursor-pointer shadow-lg shadow-gray-200 py-4 px-4 hover:scale-[1.03] transition-all duration-300"
-            >
+        {KeyFeatured.map((item: Features, i: number) => (
+          <FadeUp key={i} delay={i * 0.04}>
+            <div className=" flex flex-col justify-center items-center gap-2 rounded-2xl bg-[#ffffff] text-center cursor-pointer shadow-lg shadow-gray-200 py-4 px-4 hover:scale-[1.03] transition-all duration-300">
               <div className="rounded-full flex justify-center items-center bg-[#836448] w-[70px] h-[70px] ">
                 <Image
                   src={item.icon}
@@ -78,9 +67,9 @@ const WhyChooseUs: React.FC = () => {
               <p className="text-[18px] text-[#3A3A3A] .font-firtree">
                 {item.des}
               </p>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+            </div>
+          </FadeUp>
+        ))}
       </div>
     </div>
   );

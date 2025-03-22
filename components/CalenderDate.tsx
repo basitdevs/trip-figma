@@ -1,5 +1,4 @@
 "use client";
-import { easeInOut, motion } from "framer-motion";
 import React, { useState } from "react";
 import {
   addMonths,
@@ -15,6 +14,8 @@ import {
   differenceInCalendarDays,
 } from "date-fns";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
+import FadeLeft from "./motion/FadeLeft";
+import FadeRight from "./motion/FadeRight";
 
 type SelectedRange = {
   start: Date | null;
@@ -130,127 +131,124 @@ const Calendar: React.FC<CalendarProps> = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: easeInOut }}
-      className="w-full flex justify-center p-4 bg-white shadow-md rounded-3xl mb-2 lg:-mb-3 mt-5"
-    >
+    <div className="w-full flex justify-center p-4 bg-white shadow-md rounded-3xl mb-2 lg:-mb-3 mt-5">
       <div className="w-full grid-cols-1 lg:grid-cols-2 gap-4 grid">
-        <div className="rounded-lg p-2 ">
-          <div className="flex items-center justify-between py-2">
-            <button
-              className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer"
-              onClick={handlePrevMonth}
-            >
-              <SlArrowLeft className="text-[#474C59] text-[12px]" />
-            </button>
-            <div className="flex justify-center items-center">
-              <select
-                className="font-medium text-[16px] text-[#474C59] cursor-pointer bg-white border-none px-1 py-1 outline-none"
-                value={format(currentMonth, "yyyy-MM")}
-                onChange={(e) => {
-                  const [year, month] = e.target.value.split("-").map(Number);
-                  setCurrentMonth(new Date(year, month - 1, 1));
-                }}
+        <FadeLeft>
+          <div className="rounded-lg p-2 ">
+            <div className="flex items-center justify-between py-2">
+              <button
+                className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer"
+                onClick={handlePrevMonth}
               >
-                {Array.from({ length: 12 }, (_, i) => {
-                  const newMonth = new Date(currentMonth.getFullYear(), i, 1);
-                  return (
-                    <option key={i} value={format(newMonth, "yyyy-MM")}>
-                      {format(newMonth, "MMMM yyyy")}
-                    </option>
-                  );
-                })}
-              </select>
+                <SlArrowLeft className="text-[#474C59] text-[12px]" />
+              </button>
+              <div className="flex justify-center items-center">
+                <select
+                  className="font-medium text-[16px] text-[#474C59] cursor-pointer bg-white border-none px-1 py-1 outline-none"
+                  value={format(currentMonth, "yyyy-MM")}
+                  onChange={(e) => {
+                    const [year, month] = e.target.value.split("-").map(Number);
+                    setCurrentMonth(new Date(year, month - 1, 1));
+                  }}
+                >
+                  {Array.from({ length: 12 }, (_, i) => {
+                    const newMonth = new Date(currentMonth.getFullYear(), i, 1);
+                    return (
+                      <option key={i} value={format(newMonth, "yyyy-MM")}>
+                        {format(newMonth, "MMMM yyyy")}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <button
+                className="lg:hidden p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer"
+                onClick={handleNextMonth}
+              >
+                <SlArrowRight className="text-[12px] text-[#474C59]" />
+              </button>
+              <button className="hidden lg:block opacity-0"></button>
             </div>
-            <button
-              className="lg:hidden p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer"
-              onClick={handleNextMonth}
-            >
-              <SlArrowRight className="text-[12px] text-[#474C59]" />
-            </button>
-            <button className="hidden lg:block opacity-0"></button>
-          </div>
-          <div className="grid grid-cols-7 text-center mt-5">
-            {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
-              <div
-                key={day}
-                className="text-[12px] font-semibold text-[#836448]"
-              >
-                {day}
-              </div>
-            ))}
-            {daysInMonth(currentMonth).map((day, index) => (
-              <div
-                key={index}
-                style={getDayStyles(day, currentMonth, selectedRange)}
-                onClick={() => handleDayClick(day)}
-              >
-                {format(day, "dd")}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-lg p-2 hidden lg:block">
-          <div className="flex items-center justify-between py-2">
-            <button className="p-2 bg-gray-100 rounded-full hover:bg-white opacity-0" />
-            <div className="flex justify-center items-center">
-              <select
-                className="font-medium text-[16px] text-[#474C59] cursor-pointer bg-white border-none px-1 py-1 outline-none"
-                value={format(addMonths(currentMonth, 1), "yyyy-MM")}
-                onChange={(e) => {
-                  const [year, month] = e.target.value.split("-").map(Number);
-                  setCurrentMonth(new Date(year, month - 1, 1));
-                }}
-              >
-                {Array.from({ length: 12 }, (_, i) => {
-                  const newMonth = new Date(currentMonth.getFullYear(), i, 1);
-                  return (
-                    <option key={i} value={format(newMonth, "yyyy-MM")}>
-                      {format(newMonth, "MMMM yyyy")}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
-            <button
-              className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer"
-              onClick={handleNextMonth}
-            >
-              <SlArrowRight className="text-[12px] text-[#474C59]" />
-            </button>
-          </div>
-          <div className="grid grid-cols-7 text-center mt-5">
-            {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day: string) => (
-              <div
-                key={day}
-                className="text-[12px] font-semibold text-[#836448]"
-              >
-                {day}
-              </div>
-            ))}
-            {daysInMonth(addMonths(currentMonth, 1)).map(
-              (day, index: number) => (
+            <div className="grid grid-cols-7 text-center mt-5">
+              {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
+                <div
+                  key={day}
+                  className="text-[12px] font-semibold text-[#836448]"
+                >
+                  {day}
+                </div>
+              ))}
+              {daysInMonth(currentMonth).map((day, index) => (
                 <div
                   key={index}
-                  style={getDayStyles(
-                    day,
-                    addMonths(currentMonth, 1),
-                    selectedRange
-                  )}
+                  style={getDayStyles(day, currentMonth, selectedRange)}
                   onClick={() => handleDayClick(day)}
                 >
                   {format(day, "dd")}
                 </div>
-              )
-            )}
+              ))}
+            </div>
           </div>
-        </div>
+        </FadeLeft>
+        <FadeRight>
+          <div className="rounded-lg p-2 hidden lg:block">
+            <div className="flex items-center justify-between py-2">
+              <button className="p-2 bg-gray-100 rounded-full hover:bg-white opacity-0" />
+              <div className="flex justify-center items-center">
+                <select
+                  className="font-medium text-[16px] text-[#474C59] cursor-pointer bg-white border-none px-1 py-1 outline-none"
+                  value={format(addMonths(currentMonth, 1), "yyyy-MM")}
+                  onChange={(e) => {
+                    const [year, month] = e.target.value.split("-").map(Number);
+                    setCurrentMonth(new Date(year, month - 1, 1));
+                  }}
+                >
+                  {Array.from({ length: 12 }, (_, i) => {
+                    const newMonth = new Date(currentMonth.getFullYear(), i, 1);
+                    return (
+                      <option key={i} value={format(newMonth, "yyyy-MM")}>
+                        {format(newMonth, "MMMM yyyy")}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <button
+                className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer"
+                onClick={handleNextMonth}
+              >
+                <SlArrowRight className="text-[12px] text-[#474C59]" />
+              </button>
+            </div>
+            <div className="grid grid-cols-7 text-center mt-5">
+              {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day: string) => (
+                <div
+                  key={day}
+                  className="text-[12px] font-semibold text-[#836448]"
+                >
+                  {day}
+                </div>
+              ))}
+              {daysInMonth(addMonths(currentMonth, 1)).map(
+                (day, index: number) => (
+                  <div
+                    key={index}
+                    style={getDayStyles(
+                      day,
+                      addMonths(currentMonth, 1),
+                      selectedRange
+                    )}
+                    onClick={() => handleDayClick(day)}
+                  >
+                    {format(day, "dd")}
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </FadeRight>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

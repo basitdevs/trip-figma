@@ -2,7 +2,7 @@
 import Image from "next/image";
 import FeaturedDropdown from "./FeaturedDropdowm";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import FadeUp from "./motion/FadeUp";
 
 interface FishingFeaturedItem {
   value: string;
@@ -38,17 +38,10 @@ const FishingFeatured: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   return (
     <div className="w-full">
-      <AnimatePresence>
-        <motion.ul
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.1, ease: "easeInOut" }}
-          className="hidden  md:grid sm:grid-cols-3 xl:grid-cols-6 gap-4 w-full px-3 md:px-0"
-        >
-          {FishingFeaturedItem.map((item: FishingFeaturedItem, i: number) => (
+      <ul className="hidden  md:grid sm:grid-cols-3 xl:grid-cols-6 gap-4 w-full px-3 md:px-0">
+        {FishingFeaturedItem.map((item: FishingFeaturedItem, i: number) => (
+          <FadeUp delay={0.03 * 1} key={i}>
             <div
-              key={i}
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(0)}
               className={`group w-full transition-all duration-200 p-[13px] flex justify-start items-center gap-2 rounded-4xl border-[1px] cursor-pointer font-urbanist ${
@@ -73,9 +66,9 @@ const FishingFeatured: React.FC = () => {
               />
               <span className="text-[16px]">{item.value}</span>
             </div>
-          ))}
-        </motion.ul>
-      </AnimatePresence>
+          </FadeUp>
+        ))}
+      </ul>
       <FeaturedDropdown />
     </div>
   );
